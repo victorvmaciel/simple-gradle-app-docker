@@ -20,9 +20,11 @@ sudo apt update
 sudo apt install openjdk-11-jre-headless
 ```
 # see java version
+
 ```
 java -version
 ```
+
 ```
 openjdk version "11.0.16" 2022-07-19
 OpenJDK Runtime Environment (build 11.0.16+8-post-Ubuntu-0ubuntu120.04)
