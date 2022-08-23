@@ -3,11 +3,12 @@
  Docker App example with Spring Boot Groovy Vaadin
  
 =================================
+
 Needs:
 
-Docker 
-Java 11 or 8
-Ubuntu 20.04
+- Docker 
+- Java 11 or 8
+- Ubuntu 20.04
 
 -----
 Install the needs:
