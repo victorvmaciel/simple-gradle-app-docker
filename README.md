@@ -1,6 +1,6 @@
 =================================
 
- Docker App example with Spring Boot Groovy Vaadin
+ # Docker App example with Spring Boot Groovy Vaadin
  
 =================================
 
@@ -11,15 +11,17 @@ Needs:
 - Ubuntu 20.04
 
 -----
-Install the needs:
+## Install the needs:
 
-- install java
+### install java
 ```
 sudo apt update
 ```
+
+```
 sudo apt install openjdk-11-jre-headless
 ```
-# see java version
+ ### see java version
 
 ```
 java -version
@@ -31,7 +33,7 @@ OpenJDK Runtime Environment (build 11.0.16+8-post-Ubuntu-0ubuntu120.04)
 OpenJDK 64-Bit Server VM (build 11.0.16+8-post-Ubuntu-0ubuntu120.04, mixed mode, sharing)
 ```
 
-- Install docker
+## Install docker
 
 ```
 curl -fsSL https://get.docker.com -o get-docker.sh
@@ -41,24 +43,23 @@ curl -fsSL https://get.docker.com -o get-docker.sh
 DRY_RUN=1 sh ./get-docker.sh
 ```
 
-- Run docker without sudo
+### Run docker without sudo
 
-
-# create the docker group
-
+Create the docker group
 
 ```
 sudo groupadd docker
 ```
 
-# add your user to the docker group
+### add your user to the docker group
 
 ```
 sudo usermod -aG docker $USER
 ```
 
-# Log out and log back in so that your group membership is re-evaluated.
+- Log out and log back in so that your group membership is re-evaluated.
 
+## Runing the container 
 
 - Clone the app
 
@@ -66,33 +67,30 @@ sudo usermod -aG docker $USER
 git clone https://github.com/victorvmaciel/simple-gradle-app-docker.git
 ```
 
-Build a jar and build the dockerfile:
+### Build a jar and build the dockerfile:
 
-    # build the jar
+### build the jar
     
 ```
 ./gradlew clean build
 
 ```
 
-# build the docker 
+### build the docker 
 
 ```
 docker build -t my-app:1.0.0 .
 ```
 
-# run the docker container
+### run the docker container
 
 ```
 docker run -it -d -p 8080:8080 my-app:1.0.0
 
 ```
 
-# check the app running at 8080 http port
+### check the app running at 8080 http port
 
 ```
 http://localhost:8080
-
 ```
-
-
