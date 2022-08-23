@@ -1,0 +1,50 @@
+plugins {
+    id 'org.springframework.boot' version '2.2.4.RELEASE'
+    id 'com.devsoap.plugin.vaadin' version '1.4.1'
+    id 'groovy'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+repositories {
+    mavenLocal()
+    jcenter()
+    maven { url 'https://maven.vaadin.com/vaadin-addons' }
+}
+
+group = 'com.example'
+version = "0.0.1"
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+compileGroovy {
+	groovyOptions.configurationScript = file("gradle/groovyOptions.groovy")
+}
+
+bootJar {
+    version = null // no version in the filename
+}
+
+
+bootRun.systemProperties = System.properties // pass sysprops down to bootRun, so we can add them in configs in intellij
+
+vaadin {
+	vaadin.version = vaadinVersion
+	vaadinCompile.widgetset 'app' // name of the widgetset (see @Widgetset in the UI)
+    vaadinCompile.outputDirectory = file('build/resources/main/')
+    vaadinThemeCompile.themesDirectory = file('build/resources/main/VAADIN/themes')
+}
+
+ext['groovy.version'] = groovyVersion
+
+dependencies {
+    compile "org.springframework.boot:spring-boot-starter-web"
+    compile "org.codehaus.groovy:groovy"
+    // always exclude com.vaadin packages from deps
+    compile "com.vaadin:vaadin-spring-boot-starter:${vaadinSpringVersion}"
+    testCompile "org.spockframework:spock-core:${spockVersion}"
+    runtimeOnly "org.springframework.boot:spring-boot-devtools"
+    // vaadin addons are put automatically into the widgetset 
+    // compile("org.vaadin.addons:ckeditor-wrapper-for-vaadin:7.9.3") { exclude group:'com.vaadin' }
+}
