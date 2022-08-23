@@ -34,6 +34,7 @@ OpenJDK 64-Bit Server VM (build 11.0.16+8-post-Ubuntu-0ubuntu120.04, mixed mode,
 ```
 curl -fsSL https://get.docker.com -o get-docker.sh
 ```
+
 ```
 DRY_RUN=1 sh ./get-docker.sh
 ```
@@ -42,6 +43,8 @@ DRY_RUN=1 sh ./get-docker.sh
 
 
 # create the docker group
+
+
 ```
 sudo groupadd docker
 ```
@@ -51,6 +54,7 @@ sudo groupadd docker
 ```
 sudo usermod -aG docker $USER
 ```
+
 # Log out and log back in so that your group membership is re-evaluated.
 
 
@@ -68,6 +72,7 @@ Build a jar and build the dockerfile:
 ./gradlew clean build
 
 ```
+
 # build the docker 
 
 ```
