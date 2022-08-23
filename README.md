@@ -24,9 +24,10 @@ java -version
 openjdk version "11.0.16" 2022-07-19
 OpenJDK Runtime Environment (build 11.0.16+8-post-Ubuntu-0ubuntu120.04)
 OpenJDK 64-Bit Server VM (build 11.0.16+8-post-Ubuntu-0ubuntu120.04, mixed mode, sharing)
+
 ```
 - Install docker
-- 
+
 ```
 curl -fsSL https://get.docker.com -o get-docker.sh
 
